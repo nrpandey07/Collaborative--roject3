@@ -1,27 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Fork Me! FCC: Test Suite Template</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<html>
 
-  <body>
-    <p>Hello World, we are software dovelopers !</p>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey</title>
+    <style>
+      :root {
+	--main-color: rgb(187, 184, 117);  
+}
 
-    <!--
+body {
+	background: var(--main-color);
+}
 
-    Hello Camper!
+h1#title, p#description {
+	text-align: center;
+}
 
-    For now, the test suite only works in Chrome!
-    Please read the README below in the JS Editor before beginning.
-    Feel free to delete this message once you have read it.
-    Good luck and Happy Coding!
+form {
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(245, 245, 245);
+	border-radius: 25px;
+	padding: 3%;
+	max-width: 900px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 20px 10px;
+	align-items: baseline;
+}
 
-    - The freeCodeCamp Team
+form label {
+	letter-spacing: 2px;
+}
 
-    -->
-    <script  src="js/index.js"></script>
-  </body>
+form label, p {
+	text-align: right;
+}
+
+.label-radio {
+	letter-spacing: 1px;
+}
+
+form input, select {
+	padding: 8px;
+	border-radius: 5px;
+	border-style: inset;
+	border-width: 1px;
+	outline-style: none;
+}
+
+#comments {
+	height: 100px;
+}
+
+button {
+	justify-self: center;
+	grid-column: 1 / -1;
+	outline: none;
+	border: 0;
+	border-radius: 10px;
+	height: 40px;
+	width: 100px;
+	background-color: var(--main-color);
+	color: white;
+	font-size: 1em;
+}
+
+.shadow {
+  -moz-box-shadow:    2px 2px 3px 3px #ccc;
+  -webkit-box-shadow: 2px 2px 3px 3px #ccc;
+  box-shadow:         2px 2px 3px 3px #ccc;
+}
+
+form input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="number"]:focus,
+select:focus {
+	box-shadow: 0 0 3pt 2pt var(--main-color);
+}
+
+button:active {
+	transform: translateY(2px) translateX(2px);
+	  -moz-box-shadow:    0px 0px 1px 1px #ccc;
+	  -webkit-box-shadow: 0px 0px 1px 1px #ccc;
+	  box-shadow:         0px 0px 1px 1px #ccc;
+}
+    </style>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <h1 id="title">Survey</h1>
+    <p id="description">This is a survey</p>
+    <form id="survey-form" action="" method="post">
+        <!-- <div class="wrapper"> -->
+            <label id="name-label" for="name">*Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter you name" required
+            />
+            <label id="email-label" for="email">*Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter a valid email address"
+                required />
+            <label id="number-label" for="number">*Age:</label>
+            <input type="number" name="number" id="number" placeholder="Age" min="1" max="125"
+                required />
+            <p>Which option best describes your current role?</p>
+            <!-- Option from a Dropdown -->
+            <select name="some_name" id="dropdown">
+					<option value="" selected>Select an option</option>
+					<option value="student">Student</option>
+					<option value="job">Full Time Job</option>
+					<option value="learner">Full Time Learner</option>
+					<option value="prefer">Prefer not to say</option>
+					<option value="other">Other</option>
+				</select>
+            <p>How likely would it be for you to recommend our service to a friend?</p>
+            <div class="radio-container">
+                <!-- Group of radio buttons -->
+                <div class="radio-element">
+                    <input type="radio" value="attribute" name="attribute" id="definitely" />
+                    <label class="label-radio" for="definitely"> Definitely</label>
+                </div>
+                <div class="radio-element">
+                    <input type="radio" value="attribute" name="attribute" id="maybe" />
+                    <label class="label-radio" for="maybe"> Maybe</label>
+                </div>
+                <div class="radio-element">
+                    <input type="radio" value="attribute" name="attribute" id="not" />
+                    <label class="label-radio" for="not"> Not Sure</label>
+                </div>
+            </div>
+            <!-- Series of checkboxes -->
+            <p>This is a question?</p>
+            <div class="checkbox-container">
+                <div class="checkbox-element">
+                    <input type="checkbox" value="attribute" id="answer1" />
+                    <label for="answer1">Answer1</label>
+                </div>
+                <div class="checkbox-element">
+                    <input type="checkbox" value="attribute" id="answer1" />
+                    <label for="answer1">Answer1</label>
+                </div>
+                <div class="checkbox-element">
+                    <input type="checkbox" value="attribute" id="answer1" />
+                    <label for="answer1">Answer1</label>
+                </div>
+                <div class="checkbox-element">
+                    <input type="checkbox" value="attribute" id="answer1" />
+                    <label for="answer1">Answer1</label>
+                </div>
+            </div>
+            <p>Additional Comments</p>
+            <textarea name="comments" id="comments"></textarea>
+        <button class="shadow" type="submit" id="submit">Submit</button>
+    </form>
+    <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
 </html>
